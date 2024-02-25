@@ -1,0 +1,51 @@
+
+@use '@/styles/mixins';
+
+.header {
+  display: flex;
+  padding-block: 1rem;
+  @include mixins.screen-sm {
+    justify-content: space-between;
+  }
+
+  &__nav {
+
+    &-wrapper {
+      display: none;
+
+      @include mixins.screen-sm {
+        display: block;
+      }
+    }
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+
+  &__notifications {
+    position: relative;
+  }
+
+
+  &__notifications-alert {
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    background: hsl(var(--clr-accent));
+    width: .8rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  &__name {
+    @include mixins.textEllipsis(10ch);
+  }
+}

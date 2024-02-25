@@ -1,0 +1,62 @@
+
+@use '@/styles/mixins';
+
+.left-sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  background: var(--clr-gradient-primary); 
+  color: hsl(var(--clr-gradient-primary-text));
+
+
+
+  padding-inline: 1rem;
+  padding-block: .7rem;
+
+  @include mixins.screen-sm {
+    position: fixed;
+    top:0;
+    bottom:0;
+    width: fit-content;
+    padding-block: 2rem;
+  }
+
+  &__logo {
+    width: fit-content;
+    margin-inline: auto;
+    display: none;
+
+    @include mixins.screen-sm {
+      display: block;
+    }
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.screen-sm {
+      margin-block: 4rem 3rem;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+
+  &__cta {
+    display: none;
+
+    @include mixins.screen-sm {
+      display: block;
+    }
+  }
+}
+
+
+.sidebar-item {
+  display: flex;
+}

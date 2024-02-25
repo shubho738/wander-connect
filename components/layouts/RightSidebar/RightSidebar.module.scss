@@ -1,0 +1,85 @@
+
+@use '@/styles/mixins';
+
+.right-sidebar {
+  display: none;
+  min-width: 21.6875rem;
+
+  @include mixins.screen-lg {
+    display: block;
+  }
+
+  &__content {
+
+    padding-block: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.journals {
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__heading {
+    font-size: var(--fs-450);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .journal {
+    display: flex;
+    gap: .7rem;
+
+    &__title {
+      @include mixins.textEllipsis(20ch);
+    }
+
+    &__author {
+      color: hsl(var(--clr-neutral-md));
+    }
+  }
+}
+
+
+.follow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__heading {
+    font-size: var(--fs-450);
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    gap: .9rem;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__user-name {
+      @include mixins.textEllipsis(10ch);
+    }
+
+    &__cta {
+      margin-inline-start: auto;
+    }
+  }
+}

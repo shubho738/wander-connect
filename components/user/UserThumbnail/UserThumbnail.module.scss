@@ -1,0 +1,17 @@
+
+.thumbnail {
+  position: relative;
+  width: var(--thumbnail-size, 2.5rem);
+  aspect-ratio: 1;
+  border: 1px solid hsl(var(--clr-border));
+  border-radius: 50%;
+
+  &__image {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &.hoverStyles:hover {
+    transform: scale(1.1);
+  }
+}

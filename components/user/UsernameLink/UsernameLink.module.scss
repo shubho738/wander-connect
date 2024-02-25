@@ -1,0 +1,16 @@
+
+@use '@/styles/mixins';
+
+.username-link {
+  
+  color: hsl(var(--clr-neutral-md));
+
+  &:hover {
+    color: hsl(var(--clr-neutral-dark));
+  }
+
+  &__username {
+    display: inline-block;
+    @include mixins.textEllipsis(10ch);
+  }
+}

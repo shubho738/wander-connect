@@ -1,0 +1,77 @@
+
+// container
+
+.container {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: 32em) {
+    padding-inline: 2rem;
+  }
+}
+
+
+// flex, grid
+
+.flex-row {
+  display: flex;
+  gap: var(--gap-x, 1rem);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-y, 1rem);
+}
+
+.items-center {
+  align-items: center
+}
+
+
+// spacing
+
+.space-y {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-y-gap, 1rem);
+}
+
+.space-x {
+  display: flex;
+  gap: var(--space-x-gap, 1rem);
+}
+
+// margins
+
+.mb-custom {
+  margin-block-end: var(--mb-custom, 1rem);
+}
+
+.mb-4 {
+  margin-block-end: 4rem;
+}
+
+// colors
+
+.text-neutral-md {
+  color: hsl(var(--clr-neutral-md));
+}
+
+
+// animations
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: .4;;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

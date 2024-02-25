@@ -1,0 +1,34 @@
+
+@use '@/styles/mixins';
+
+.profile {
+
+  &-header {
+    position: relative;
+
+    &__profile-img {
+      position: absolute;
+      bottom: -5rem;
+      left: .5rem;
+    }
+  }
+
+  &-info {
+
+    padding-block-start: 1rem;
+
+    &__cta {
+      display: flex;
+      justify-content: flex-end;
+      margin-block-start: 1.5rem;
+
+      @include mixins.screen-sm {
+        margin-block-start: 0;
+      }
+    }
+
+    &__content {
+      margin-block-start: 2.5rem;
+    }
+  }
+}

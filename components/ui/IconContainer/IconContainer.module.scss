@@ -1,0 +1,14 @@
+
+.container {
+  background-color: hsl(var(--clr-foreground));
+  border-radius: 50%;
+  padding: 0.38rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: .2s transform ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

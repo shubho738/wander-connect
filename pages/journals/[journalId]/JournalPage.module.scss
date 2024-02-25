@@ -1,0 +1,51 @@
+
+@use '@/styles/mixins';
+
+.journal {
+
+  &__title {
+    font-size: var(--fs-550);
+  }
+
+  &__info {
+    display: flex;
+    gap: 1.2rem;
+    color: hsl(var(--clr-neutral-md));
+  }
+
+  &__author {
+
+    margin-block-start: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-names {
+      display: flex;
+      gap: .5rem;
+
+    }
+
+    &-name {
+      @include mixins.textEllipsis(15ch);
+    }
+
+    &-username {
+      color: hsl(var(--clr-neutral-md));
+
+      &:hover {
+        color: hsl(var(--clr-neutral-dark));
+      }
+    }
+  } 
+
+  &__image {
+    margin-block-start: 2rem;
+  }
+
+  &__content {
+    margin-block-start: 3rem;
+    line-height: 1.9rem;
+    font-size: var(--fs-450);
+  }
+}

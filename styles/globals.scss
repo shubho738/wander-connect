@@ -1,0 +1,104 @@
+
+@use 'resets';
+@use 'utils';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+
+  // colors
+
+  --clr-background: 0 0% 100%;
+  --clr-foreground: 0 0% 0%;
+
+  --clr-accent: 0 100% 50%;
+  --clr-accent-secondary: 266 42% 47%;
+  --clr-accent-tertiary: 210 100% 56%;
+
+  --clr-neutral-light: 0 0% 100%;
+  --clr-neutral-dark: 0 0% 0%;
+  --clr-neutral-md: 0 0% 50%;
+
+  --clr-gradient-primary: linear-gradient(to right, #6E48AA, #9D50BB);
+  --clr-gradient-primary-text: 0 0% 100%;
+  --clr-gradient-secondary: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,16,236,1) 0%, rgba(0,212,255,1) 100%);
+  --clr-gradient-secondary-text: 0 0% 100%;
+
+  --clr-btn-primary: 0 0% 0%;
+  --clr-btn-primary-text: 0 0% 100%;
+  --clr-btn-primary-loader: 0 0% 100%;
+  --clr-btn-secondary: 0 0% 100%;
+  --clr-btn-secondary-text: 0 0% 0%;
+  --clr-btn-secondary-loader: 0 0% 0%;
+  --clr-btn-destroy: 350 100% 50%;
+  --clr-btn-destroy-text: 0 0% 100%;
+  --clr-btn-destroy-loader: 0 0% 100%;
+
+
+  --clr-input-bg: 0 0% 100%;
+  --clr-input-text: 0 0% 0%;
+
+
+  --clr-border-light: 0 0% 85%;
+  --clr-border: 0 0% 50%;
+
+  --clr-loader: 214 84% 42%;
+
+  --clr-tooltip-bg: 0 0% 0%;
+  --clr-tooltip-text: 0 0% 100%;
+
+  --clr-modal-bg: 0 0% 100%;
+  --clr-modal-text: 0 0% 0%;
+
+
+  --clr-hover-light: 0 0% 92%;
+  --clr-hover-md: 0 0% 50%;
+  --clr-hover-dark: 0 0% 0%;
+
+
+  // font sizes
+  --fs-600: 2.5rem;
+  --fs-550: 1.85rem;
+  --fs-500: 1.5rem;
+  --fs-450: 1.2rem;
+  --fs-400: 1.1rem;
+  --fs-300: .95rem;
+  --fs-100: .78rem;
+}
+
+
+
+.dark {
+  --clr-background: 0 0% 0%;
+  --clr-foreground: 0 0% 100%;
+
+  --clr-btn-primary: 0 0% 100%;
+  --clr-btn-primary-text: 0 0% 0%;
+  --clr-btn-primary-loader: 0 0% 0%;
+
+
+  --clr-input-bg: 0 0% 0%;
+  --clr-input-text: 0 0% 100%;
+
+
+  --clr-tooltip-bg: 210 100% 56%;
+  --clr-tooltip-text: 0 0% 100%;
+
+  --clr-hover-light: 0 0% 0%;
+  --clr-hover-md: 0 0% 50%;
+  --clr-hover-dark: 0 0% 92%;
+
+  --clr-loader: 0 0% 100%;
+}
+
+
+body {
+  background: hsl(var(--clr-background));
+  color: hsl(var(--clr-foreground));
+  font-size: var(--fs-400);
+}

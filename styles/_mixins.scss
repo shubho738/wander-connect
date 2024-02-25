@@ -1,0 +1,52 @@
+
+// responsive media queries
+
+@mixin screen-xs() {
+
+  @media (min-width: 25rem) {
+    @content;
+  }
+}
+
+@mixin screen-sm() {
+
+  @media (min-width: 32em) {
+    @content;
+  }
+}
+
+@mixin screen-lg() {
+
+  @media (min-width: 60em) {
+    @content;
+  }
+}
+
+
+// text styles
+
+@mixin textEllipsis($maxWidth: 20ch) {
+  max-width: $maxWidth;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@mixin lineClamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+
+
+// animations
+
+@mixin animate($animationStyle, $duration: 0.3s, $timingFunction: ease, $fillMode: forwards) {
+  animation: $animationStyle $duration $timingFunction $fillMode;
+}
+
+
+

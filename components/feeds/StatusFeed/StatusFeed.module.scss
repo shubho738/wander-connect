@@ -1,0 +1,12 @@
+
+.status-feed {
+
+  padding-block-start: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__empty {
+    font-size: var(--fs-450);
+  }
+}

@@ -1,0 +1,24 @@
+
+@use '@/styles/mixins';
+
+.comment-form {
+  
+  margin-block: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  &__user-thumbnail {
+    display: none;
+    @include mixins.screen-sm {
+      display: block;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .7rem;
+  }
+}

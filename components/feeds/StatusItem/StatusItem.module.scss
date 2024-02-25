@@ -1,0 +1,78 @@
+
+@use '@/styles/mixins';
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__info {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    &__user-name {
+      @include mixins.textEllipsis(20ch);
+      @include mixins.screen-xs {
+        @include mixins.textEllipsis(30ch);
+      };
+    }
+
+    &__username {
+      color: hsl(var(--clr-neutral-md));
+      margin-inline-start: .3rem;
+    }
+
+    &__additional-info {
+      
+      margin-top: .2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: var(--fs-300);
+
+      @include mixins.screen-sm{
+        flex-direction: row;
+        gap: .5rem;
+      }
+
+      &-details {
+        display: flex;
+        gap: .5rem;
+      }
+    }
+
+    &__date {
+      color: hsl(var(--clr-neutral-md));
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+
+      &-text {
+        word-break: break-word;
+      }
+    }
+
+    &__cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: .3rem;
+      }
+    }
+  }

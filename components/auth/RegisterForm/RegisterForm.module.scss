@@ -1,0 +1,22 @@
+
+
+.register-form {
+
+  text-align: center;
+
+  &__heading {
+    font-size: var(--fs-500);
+  }
+
+  &__form {
+    margin-block: 1rem;
+  }
+
+  &__login {
+    color: hsl(var(--clr-neutral-md));
+
+    &:hover {
+      color: hsl(var(--clr-accent-secondary));
+    }
+  }
+}

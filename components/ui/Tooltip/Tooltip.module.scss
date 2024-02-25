@@ -1,0 +1,27 @@
+
+@use '@/styles/mixins';
+
+.tooltip {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: inline-block;
+  font-size: var(--fs-100);
+
+  @include mixins.screen-lg {
+    &:hover .tooltip__content {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: -1.6rem;
+    background-color: hsl(var(--clr-tooltip-bg) / .9);
+    color: hsl(var(--clr-tooltip-text));
+    padding: .01rem .2rem;
+    border-radius: 4px;
+    z-index: 1;
+    display: none;
+   }
+}

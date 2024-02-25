@@ -1,0 +1,40 @@
+
+@use '@/styles/mixins';
+
+.main-layout {
+
+  &__container {
+    padding-block-end: 4rem;
+
+    @include mixins.screen-sm {
+      padding-block-end: 0;
+      padding-inline-start: 3.5rem;
+    }
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: hsl(var(--clr-background));
+  }
+
+  &__body {
+    padding: 2rem 0 4rem;
+    display: grid;
+    gap: 1.5rem;
+
+    @include mixins.screen-lg {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__main {
+    max-width: 38rem;
+  }
+
+  &__right-sidebar {
+    position: sticky;
+    top: 0;
+  }
+}
