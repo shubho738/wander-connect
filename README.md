@@ -1,6 +1,6 @@
 # WanderConnect
 
-This project is a social media site designed for travelers, offering all the standard social media functionalities along with the ability to create travel journals. It is built using Next.js, TypeScript, SCSS modules for styling, and follows a full-stack architecture with Prisma and MongoDB for data storage.
+This project is a social media site designed for travelers, offering all the standard social media functionalities along with the ability to create travel journals. It is built using Next.js, NextAuth, Redux Toolkit, SWR, TypeScript, SCSS modules for styling, and follows a full-stack architecture with Prisma and MongoDB for data storage.
 
 ## Features
 
