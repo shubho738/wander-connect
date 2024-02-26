@@ -23,8 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider 
       client={queryClient}
     >
-     <SessionProvider session={pageProps.session}>
-      <Provider store={store}>
+     <SessionProvider 
+       session={pageProps.session}
+     >
+      <Provider 
+        store={store}
+      >
 
          <Head>
           <title>{siteConfig?.title}</title>
@@ -32,7 +36,43 @@ export default function App({ Component, pageProps }: AppProps) {
             name="description" 
             content={siteConfig?.description} 
           />
-          <link rel="shortcut icon" href="/icon.ico" />
+          <meta 
+            property="og:type" 
+            content="website" 
+          />
+          <meta 
+            property="og:locale" 
+            content="en_US" 
+          />
+          <meta 
+            property="og:url" 
+            content={siteConfig.url} 
+          />
+          <meta 
+            property="og:title" 
+            content={siteConfig.title} 
+          />
+          <meta 
+            property="og:description" 
+            content={siteConfig.description} 
+          />
+          <meta 
+            property="og:site_name" 
+            content={siteConfig.name} 
+          />
+        
+          <meta 
+            property="article:author" 
+            content="https://github.com/shubho738"
+          />
+          <meta 
+            name="creator" 
+            content="Shubhankar Chakraborty" 
+          />
+          <link 
+            rel="shortcut icon" 
+            href="/icon.ico" 
+          />
         </Head>
 
         <Toaster 
