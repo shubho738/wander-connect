@@ -40,7 +40,7 @@ const StatusItem = ({statusId}: StatusItemProps) => {
   const {toggleStar, isPending: isStarPending}: {toggleStar: () => Promise<void>, isPending: boolean} = useStar(statusId, status?.userId ?? "")
 
 
-  const statusDate = getTimeDistance(status?.updatedAt ?? "")
+  const statusDate = getTimeDistance(status?.createdAt ?? "")
 
 
   const onStar = async (e: React.MouseEvent<HTMLButtonElement>) => {
