@@ -8,6 +8,7 @@ import {KeyedMutator} from 'swr'
 import type {Notification, UserBasic} from '@/libs/types'
 import authOptions from '@/libs/authOptions'
 import useNotifications from '@/hooks/useNotifications'
+import useNotificationStatus from '@/hooks/useNotificationStatus'
 import useCurrentUser from '@/hooks/useCurrentUser'
 import {updateNotificationAlert, deleteNotifications} from '@/libs/helpers/notifications'
 import MainLayout from '@/components/layouts/MainLayout/MainLayout'
@@ -46,6 +47,8 @@ const NotificationsPage = () => {
 
   const {data: notifications, isLoading: isLoadingNotifications, error: errorNotifications, mutate: mutateNotifications}: {data: Notification[] | undefined, isLoading: boolean, mutate: KeyedMutator<Notification[] | undefined>, error: any} = useNotifications()
 
+  const {mutate: mutateNotificationsStatus}: {mutate: KeyedMutator<boolean | undefined>} = useNotificationStatus()
+
   const {mutate: mutateCurrentUser}: {mutate: KeyedMutator<UserBasic | undefined>} = useCurrentUser()
 
   const onDelete = async () => {
@@ -70,10 +73,11 @@ const NotificationsPage = () => {
 
   useEffect(() => {
 
-    const fetchData = async () => {
+    const updateNotification = async () => {
       
       try {
         await updateNotificationAlert()
+        mutateNotificationsStatus()
         mutateCurrentUser()
       }
 
@@ -82,7 +86,7 @@ const NotificationsPage = () => {
       }
     }
 
-    fetchData()
+    updateNotification()
 
   }, [])
 
