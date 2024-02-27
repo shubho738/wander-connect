@@ -26,7 +26,8 @@ const useFollow = (userId: string): fnReturnType => {
   const {mutate: mutateFollowedUser}: {mutate: KeyedMutator<User | undefined>} = useUser(userId)
   const {mutate: mutateFollowingUser}: {mutate: KeyedMutator<User | undefined>} = useUser(currentUser?.id ?? "")
 
-  const followedUsers: string[] = useSelector((state: RootState) => state.follow.followedUsers)
+   const followedUsers: string[] = useSelector((state: RootState) => state.follow.followedUsers)
+
 
   const dispatch = useDispatch()
 

@@ -5,6 +5,8 @@ import {useRouter} from 'next/router'
 import Link from 'next/link'
 import toast from 'react-hot-toast'
 
+import store from '@/redux/store'
+import {fetchFollowedUsers} from '@/redux/slices/followSlice'
 import validateEmail from '@/libs/helpers/validateEmail'
 import validatePasswordCharLimit from '@/libs/helpers/validatePasswordCharLimit'
 import Form from '../../ui/Form/Form'
@@ -55,6 +57,7 @@ const LoginForm = () => {
     } 
 
     else {
+      store.dispatch(fetchFollowedUsers())
       router.push('/')
       toast.success('Logged in.')
     }

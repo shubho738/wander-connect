@@ -137,6 +137,7 @@ const FollowItem = ({userId}: FollowItemProps) => {
 
   const router = useRouter()
 
+
   return (
      <Card
        onClick={() => router.push(`/profile/${user?.id}`)}
@@ -171,7 +172,7 @@ const FollowItem = ({userId}: FollowItemProps) => {
            className={styles["follow-item__cta"]}
          >
            <FollowButton
-             userId={user?.id ?? ""}
+             userId={userId}
              customStyles={{backgroundColor: "hsl(var(--clr-neutral-dark))", color: "hsl(var(--clr-neutral-light))"}}
              loaderColor="hsl(var(--clr-neutral-light))"
            />

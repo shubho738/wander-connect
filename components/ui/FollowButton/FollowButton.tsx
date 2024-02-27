@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 import useFollow from '@/hooks/useFollow'
 import Button from '../Button/Button'
 
