@@ -37,7 +37,7 @@ const StatusItem = ({statusId}: StatusItemProps) => {
 
   const {data: statusAuthor}: {data: UserBasic | undefined} = useBasicUserInfo(status?.userId ?? "")
 
-  const {toggleStar, isPending: isStarPending}: {toggleStar: () => Promise<void>, isPending: boolean} = useStar(statusId, status?.userId ?? "")
+  const {toggleStar, isPending: isStarPending, isStarred}: {toggleStar: () => Promise<void>, isPending: boolean, isStarred: boolean | undefined} = useStar(statusId, status?.userId ?? "")
 
 
   const statusDate = getTimeDistance(status?.createdAt ?? "")
@@ -157,7 +157,7 @@ const StatusItem = ({statusId}: StatusItemProps) => {
             checkAuth
             onClick={onStar}
             icon={Star}
-            customStyles={{padding: "0", background: "transparent", color: "hsl(var(--clr-foreground))"}}
+            customStyles={{padding: "0", background: "transparent", color: isStarred ? "hsl(var(--clr-accent))" : "hsl(var(--clr-foreground))"}}
           />
           )}
 

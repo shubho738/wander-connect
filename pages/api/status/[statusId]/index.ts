@@ -34,6 +34,7 @@ const handleGET = async (req: NextApiRequest, res: NextApiResponse) => {
         createdAt: true,
         updatedAt: true,
         userId: true,
+        likedIds: true,
         user: {
           select: {
             id: true,

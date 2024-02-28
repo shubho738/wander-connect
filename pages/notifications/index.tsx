@@ -47,7 +47,7 @@ const NotificationsPage = () => {
 
   const {data: notifications, isLoading: isLoadingNotifications, error: errorNotifications, mutate: mutateNotifications}: {data: Notification[] | undefined, isLoading: boolean, mutate: KeyedMutator<Notification[] | undefined>, error: any} = useNotifications()
 
-  const {mutate: mutateNotificationsStatus}: {mutate: KeyedMutator<boolean | undefined>} = useNotificationStatus()
+  const {mutate: mutateNotificationStatus}: {mutate: KeyedMutator<boolean | undefined>} = useNotificationStatus()
 
   const {mutate: mutateCurrentUser}: {mutate: KeyedMutator<UserBasic | undefined>} = useCurrentUser()
 
@@ -77,7 +77,7 @@ const NotificationsPage = () => {
       
       try {
         await updateNotificationAlert()
-        mutateNotificationsStatus()
+        mutateNotificationStatus()
         mutateCurrentUser()
       }
 

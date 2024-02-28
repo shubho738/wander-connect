@@ -1,5 +1,5 @@
 
-import {useState, useRef, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import axios from "axios"
 import toast from 'react-hot-toast'
 import type { KeyedMutator } from 'swr'
@@ -21,15 +21,13 @@ const useStar = (statusId: string, statusAuthorId: string) => {
   const { mutate: mutateNotifications }: { mutate: KeyedMutator<Notification[] | undefined>} = useNotifications()
   const {mutate: mutateNotificationStatus}: {mutate: KeyedMutator<boolean | undefined>} = useNotificationStatus()
 
-  const isStarred = useRef<boolean>()
-
+  const [isStarred, setIsStarred] = useState<boolean | undefined>(undefined)
   const [isPending, setIsPending] = useState(false)
 
 
   useEffect(() => {
-    if (status) {
-      isStarred.current = status?.likedIds?.includes(currentUser?.id ?? "")
-    }
+
+    setIsStarred(status?.likedIds?.includes(currentUser?.id ?? ""))
   }, [status?.likedIds, currentUser?.id])
 
 
@@ -39,7 +37,7 @@ const useStar = (statusId: string, statusAuthorId: string) => {
 
     try {
 
-      if (!isStarred.current) {
+      if (!isStarred) {
 
         await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/like`, {statusId})
 
@@ -47,15 +45,15 @@ const useStar = (statusId: string, statusAuthorId: string) => {
           userId: statusAuthorId,
           title: `${currentUser?.username} liked your status.`
         })
-        toast.success("Star added.")
+        toast.success("Star added.", {id: "starAdded"})
       }
 
       else {
         await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/like?statusId=${statusId}`)
-        toast.success("Star removed.")
+        toast.success("Star removed.", {id: "starRemoved"})
       }
 
-      isStarred.current = !isStarred.current
+      setIsStarred(!isStarred)
 
       mutateNotifications()
       mutateNotificationStatus()
@@ -67,13 +65,14 @@ const useStar = (statusId: string, statusAuthorId: string) => {
     } catch (err) {
 
       setIsPending(false)
-      toast.error("Sorry, there was an error.")
+      toast.error("Sorry, there was an error.", {id: "starError"})
     }
   }
 
   return {
     toggleStar,
-    isPending
+    isPending,
+    isStarred
   }
 }
 
